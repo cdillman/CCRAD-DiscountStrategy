@@ -10,6 +10,10 @@ package ccrad.discountstrategy;
  */
 public interface DiscountStrategy {
 
+    /**
+     *
+     * @return
+     */
     double getDiscount();
     double getCost();
     double getQty();

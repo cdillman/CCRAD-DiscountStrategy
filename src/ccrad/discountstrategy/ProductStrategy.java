@@ -16,7 +16,7 @@ public interface ProductStrategy {
 
     String getProductName();
 
-    double getQty();
+    double getCost();
 
     void setDiscount(DiscountStrategy discount);
 
@@ -24,6 +24,7 @@ public interface ProductStrategy {
 
     void setProductName(String productName);
 
-    void setQty(double qty);
+    void setCost(double cost);
     
+
 }

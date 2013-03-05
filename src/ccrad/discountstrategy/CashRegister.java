@@ -10,5 +10,24 @@ package ccrad.discountstrategy;
  * @author Corbin
  */
 public class CashRegister {
+    private Receipt receipt;
+
+    public void startNewSale(String custId) {
+        receipt = new Receipt(custId);
+    }
+    
+    public void addItem(String productId, int qty){
+        receipt.addLineItem(productId, qty);
+    }
+
+    public Receipt getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Receipt receipt) {
+        this.receipt = receipt;
+    }
+    
+        
     
 }

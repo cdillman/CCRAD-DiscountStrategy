@@ -4,6 +4,9 @@
  */
 package ccrad.discountstrategy;
 
+
+
+
 /**
  *
  * @author Corbin
@@ -12,14 +15,16 @@ public class Product implements ProductStrategy{
     
     private String productId;
     private String productName;
-    private double qty;
+    private double cost;
     private DiscountStrategy discount;
    
 
-    public Product(String id, String name, double qty) {
+    public Product(String id, String name, double cost, DiscountStrategy dis) {
         productId = id;
         productName = name;
-        this.qty = qty;
+        this.cost = cost;
+        discount = dis;
+        
     }
 
     @Override
@@ -32,10 +37,7 @@ public class Product implements ProductStrategy{
         return productName;
     }
 
-    @Override
-    public double getQty() {
-        return qty;
-    }
+
 
     @Override
     public void setProductId(String productId) {
@@ -47,10 +49,6 @@ public class Product implements ProductStrategy{
         this.productName = productName;
     }
 
-    @Override
-    public void setQty(double qty) {
-        this.qty = qty;
-    }
 
     @Override
     public DiscountStrategy getDiscount() {
@@ -61,14 +59,24 @@ public class Product implements ProductStrategy{
     public void setDiscount(DiscountStrategy discount) {
         this.discount = discount;
     }
-    
-    
-    
-        public static void main(String[] args) {
-            Product shirt = new Product("123","Green Shirt", 3);
-            DiscountStrategy dis = new NormalDiscount(20, shirt.getQty());
-            System.out.println(dis.getDiscount() + shirt.getProductName());
+   
+    @Override
+    public double getCost() {
+        return cost;
     }
+
+    @Override
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+    
+    
+    
+//        public static void main(String[] args) {
+//            Product shirt = new Product("123","Green Shirt");
+//            DiscountStrategy dis = new NormalDiscount(20,.1);
+//            System.out.println(dis.getDiscount() + "  " + shirt.getProductName());
+//    }
     
     
 }

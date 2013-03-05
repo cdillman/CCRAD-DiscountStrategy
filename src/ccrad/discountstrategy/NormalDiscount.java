@@ -9,13 +9,13 @@ package ccrad.discountstrategy;
  * @author Corbin
  */
 public class NormalDiscount implements DiscountStrategy {
-    private double discount = .50;
+    private double discount = .10;
     private double cost;
     private double qty;
     
-    public NormalDiscount(double cost, double quan){
+    public NormalDiscount(double cost, double dis){
         this.cost = cost;
-        this.qty = quan;
+        discount = dis;
     }
 
     @Override

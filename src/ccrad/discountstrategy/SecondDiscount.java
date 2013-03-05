@@ -51,10 +51,5 @@ public class SecondDiscount implements DiscountStrategy{
     
     
     
-        public static void main(String[] args) {
-       
-            SecondDiscount dis = new SecondDiscount(20,2);
-            System.out.println(dis.getDiscount());
-            
-    }
+        
 }
